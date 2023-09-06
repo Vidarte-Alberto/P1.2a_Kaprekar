@@ -1,16 +1,19 @@
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 public class Kaprekar {
 
     public static String validationNumber(String n, int maxLength) {
+        int num = Integer.parseInt(n);
+        if(num % 1111 == 0) {
+            throw new IllegalArgumentException("Número no válido: Numeros repetidos");
+        }
+        /*
         Set<Character> number = new HashSet<>();
 
         for (char c : n.toCharArray()) {
             if (!number.add(c)) {
                 throw new IllegalArgumentException("Número no válido: Números repetidos de manera consecutiva");
             }
-        }
+        }*/
         if (n.length() > maxLength) {
             throw new IllegalArgumentException("Número no válido: Longitud incorrecta");
         }
